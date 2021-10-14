@@ -24,9 +24,17 @@ arabic_to_roman 10 = X
 arabic_to_roman num = if (n < 0)
                         then (error "Roman Numerals must be positive numbers greater than zero")
                         else if (n > 10)
-                          then (X (arabic_to_roman (n-10)))
+                          then (X(arabic_to_roman (n-10)))
                           else if (n > 5)
-                            then (V (arabic_to_roman (n-5)))
+                            then (V(arabic_to_roman (n-5)))
                             if (n > 1)
-                              then (I (arabic_to_roman (n-1)))
+                              then (I(arabic_to_roman (n-1)))
                                 else (error "Roman Numeral could not be found")
+
+
+
+----------
+-- Testing
+----------
+
+main = do
