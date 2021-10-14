@@ -3,8 +3,15 @@ data ROMAN = I | V | X
   deriving (Eq,Show) -- for equality and printing
 
 
--- --Converting roman numerals to arabic numerals/integers
--- roman_to_arabic
+--Converting roman numerals to arabic numerals/integers
+roman_to_arabic :: ROMAN -> Integer
+roman_to_arabic I =  1
+roman_to_arabic V =  5
+roman_to_arabic X = 10
+
+roman_to_arabic I val = (roman_to_arabic val) + 1
+roman_to_arabic V val = (roman_to_arabic val) + 5
+roman_to_arabic X val = (roman_to_arabic val) + 10
 
 
 
