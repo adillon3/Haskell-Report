@@ -1,3 +1,6 @@
+import Data.List
+import System.IO
+
 --Data Types
 -- I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
 data ROMAN = I | V | X | L | C | D | M
@@ -33,21 +36,21 @@ arabic_to_roman 100 = C
 arabic_to_roman 500 = D
 arabic_to_roman 1000 = M
 
-arabic_to_roman num = if (n < 0)
+arabic_to_roman num = if (num < 0)
                         then (error "Roman Numerals must be positive numbers greater than zero")
-                        else if (n > 1000)
+                        else if (num > 1000)
                           then (M(arabic_to_roman (n-1000)))
-                          else if (n > 500)
+                          else if (num > 500)
                             then (D(arabic_to_roman (n-500)))
-                            else if (n > 100)
+                            else if (num > 100)
                               then (C(arabic_to_roman (n-100)))
-                              else if (n > 100)
+                              else if (num > 100)
                                 then (L(arabic_to_roman (n-50)))
-                                else if (n > 10)
+                                else if (numn > 10)
                                   then (X(arabic_to_roman (n-10)))
-                                  else if (n > 5)
+                                  else if (num > 5)
                                     then (V(arabic_to_roman (n-5)))
-                                    else if (n > 1)
+                                    else if (num > 1)
                                       then (I(arabic_to_roman (n-1)))
                                       else (error "Roman Numeral could not be found")
 
