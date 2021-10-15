@@ -1,10 +1,9 @@
 import Data.List
 import System.IO
 
-
+--ROMAN_TO_ARRAIC
 roman_to_arabic :: String -> Integer
 roman_to_arabic x = convertIntegers(getCharacters x)
-
 
 convertIntegers :: [Integer] -> Integer
 convertIntegers [] = 0
@@ -16,7 +15,6 @@ convertIntegers (x:xs) = do
       convertIntegers xs + x
       else
       convertIntegers xs + x
-
 
 getCharacters :: String -> [Integer]
 getCharacters [] = []
@@ -31,15 +29,8 @@ getValueOfCharacter 'C' = 100
 getValueOfCharacter 'D' = 500
 getValueOfCharacter 'M' = 1000
 
--- --Converting roman numerals to arabic numerals/integers
--- roman_to_arabic :: String -> Integer
--- roman_to_arabic "I" = 1
--- roman_to_arabic "V" = 5
--- roman_to_arabic "X" = 10
--- roman_to_arabic "L" = 50
--- roman_to_arabic "C" = 100
--- roman_to_arabic "D" = 500
--- roman_to_arabic "M" = 1000
+--ARRABIC_TO_ROMAN
+
 
 -- roman_to_arabic (val I) = (roman_to_arabic val) + 1
 -- roman_to_arabic V val = (roman_to_arabic val) + 5
