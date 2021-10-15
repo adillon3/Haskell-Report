@@ -89,32 +89,4 @@ main = do
   print $ "X + X " ++ show (add_roman_numerals "X" "X")
 
 
-
-  print $ "** TESTING roman_to_arabic **"
-  print $ "roman_to_arabic I - Expected: 1, Actual: " ++ show (roman_to_arabic "I")
-  print $ "roman_to_arabic V - Expected: 5, Actual: " ++ show (roman_to_arabic "V")
-  print $ "roman_to_arabic X - Expected: 10, Actual: " ++ show (roman_to_arabic "X")
-  print $ "roman_to_arabic L - Expected: 50, Actual: " ++ show (roman_to_arabic "L")
-  print $ "roman_to_arabic C - Expected: 100, Actual: " ++ show (roman_to_arabic "C")
-  print $ "roman_to_arabic D - Expected: 500, Actual: " ++ show (roman_to_arabic "D")
-  print $ "roman_to_arabic M - Expected: 1000, Actual: " ++ show (roman_to_arabic "M")
-  print $ "roman_to_arabic II - Expected: 2, Actual: " ++ show (roman_to_arabic "II")
-  print $ "roman_to_arabic XL - Expected: 40, Actual: " ++ show (roman_to_arabic "XL")
-
-
-
-  print $ "** TESTING roman_to_arabic **"
-  print $ "arabic_to_roman 1 - Expected: I, Actual: " ++ show (arabic_to_roman 1)
-  print $ "arabic_to_roman 5 - Expected: V, Actual: " ++ show (arabic_to_roman 5)
-  print $ "arabic_to_roman 10 - Expected: X, Actual: " ++ show (arabic_to_roman 10)
-  print $ "arabic_to_roman 50 - Expected: L, Actual: " ++ show (arabic_to_roman 50)
-  print $ "arabic_to_roman 100 - Expected: C, Actual: " ++ show (arabic_to_roman 100)
-  print $ "arabic_to_roman 500 - Expected: D, Actual: " ++ show (arabic_to_roman 500)
-  print $ "arabic_to_roman 1000 - Expected: M, Actual: " ++ show (arabic_to_roman 1000)
-
-  print $ "arabic_to_roman 2 - Expected: II, Actual: " ++ show (arabic_to_roman 2)
-  print $ "arabic_to_roman 9 - Expected: IX, Actual: " ++ show (arabic_to_roman 944)
-
-
-
   return ()
