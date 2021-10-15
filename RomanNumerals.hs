@@ -30,9 +30,16 @@ roman_to_arabic x = convertIntegers(getCharacters x)
 
 
 
+
+
 convertIntegers :: [Integer] -> Integer
 convertIntegers [] = 0
 convertIntegers (x:xs) = x + convertIntegers xs
+if xs != []
+  check if head xs is "greater than" x
+    then convertIntegers xs - x
+    else
+      convertIntegers xs + x
 --if the previous value is less than the current value, then we need to subtract it from the next value, ie: if we have IV, we subtract 1 from 5 and return that instead
 
 
