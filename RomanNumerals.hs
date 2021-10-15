@@ -1,46 +1,21 @@
 import Data.List
 import System.IO
 
--- --Data Types
--- -- I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
--- data ROMAN = I | V | X | L | C | D | M | ROMAN ROMAN
---   deriving (Eq,Show) -- for equality and printing
 
 roman_to_arabic :: String -> Integer
 roman_to_arabic x = convertIntegers(getCharacters x)
 
--- convert :: [Integer] -> Integer
--- convert list = calc list 0
-
--- calc :: [Integer] -> Integer -> Integer
--- calc [] r = r
--- calc (m:ms) r = do
---   let x = m
---   if length ms > 0
---     then do
---       let y = ms !! 0
---       if x >= y
---         then do
---           calc ms (r + x)
---         else do
---           calc (tail ms) (r + y - x)
-
-
-
-
-
-
-
 
 convertIntegers :: [Integer] -> Integer
 convertIntegers [] = 0
-convertIntegers (x:xs) = x + convertIntegers xs
-if xs != []
-  check if head xs is "greater than" x
+convertIntegers (x:xs) = do
+  if xs /= []
+    then if x < head xs
     then convertIntegers xs - x
     else
       convertIntegers xs + x
---if the previous value is less than the current value, then we need to subtract it from the next value, ie: if we have IV, we subtract 1 from 5 and return that instead
+      else
+      convertIntegers xs + x
 
 
 getCharacters :: String -> [Integer]
@@ -130,7 +105,7 @@ main = do
 
 
   print $ "roman_to_arabic II - Expected: 2, Actual: " ++ show (roman_to_arabic "II")
-  print $ "roman_to_arabic IV - Expected: 4, Actual: " ++ show (roman_to_arabic "IV")
+  print $ "roman_to_arabic IX - Expected: 9, Actual: " ++ show (roman_to_arabic "IX")
 
 
   -- let roman = "IX"
