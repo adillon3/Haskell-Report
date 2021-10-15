@@ -75,14 +75,7 @@ calcRoman num = if (num > 0)
 -- Testing
 ----------
 main = do
-  -- print $ "** TESTING arabic_to_roman **"
-  -- print $ "arabic_to_roman 1 - Expected: I, Actual: " ++ show (arabic_to_roman 1)
-  -- print $ "arabic_to_roman 5 - Expected: V, Actual: " ++ show (arabic_to_roman 5)
-  -- print $ "arabic_to_roman 10 - Expected: X, Actual: " ++ show (arabic_to_roman 10)
-  -- print $ "arabic_to_roman 50 - Expected: L, Actual: " ++ show (arabic_to_roman 50)
-  -- print $ "arabic_to_roman 100 - Expected: C, Actual: " ++ show (arabic_to_roman 100)
-  -- print $ "arabic_to_roman 500 - Expected: D, Actual: " ++ show (arabic_to_roman 500)
-  -- print $ "arabic_to_roman 1000 - Expected: M, Actual: " ++ show (arabic_to_roman 1000)
+
 
   print $ "** TESTING roman_to_arabic **"
   print $ "roman_to_arabic I - Expected: 1, Actual: " ++ show (roman_to_arabic "I")
