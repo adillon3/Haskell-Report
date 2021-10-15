@@ -34,25 +34,42 @@ getValueOfCharacter 'M' = 1000
 --------------------
 --ARRABIC_TO_ROMAN--
 --------------------
+
 arabic_to_roman :: Integer -> String
-arabic_to_roman 0 = []
-arabic_to_roman num = if (num > 0)
+arabic_to_roman 0 = error "Roman Numerals must be positive numbers greater than zero"
+arabic_to_roman num = calcSimpleRoman(num)
+
+calcRoman :: Integer -> String
+calcRoman 0 = []
+calcRoman num = if (num > 0)
                         then if (num >= 1000)
-                          then ("M" ++ (arabic_to_roman (num-1000)))
-                          else if (num >= 500)
-                            then ("D" ++ (arabic_to_roman (num-500)))
-                            else if (num >= 100)
-                              then ("C" ++ (arabic_to_roman (num-100)))
-                                else if (num >= 50)
-                                  then ("L" ++ (arabic_to_roman (num-50)))
-                                  else if (num >= 10)
-                                    then ("X" ++ (arabic_to_roman (num-10)))
-                                    else if (num >= 5)
-                                      then ("V" ++ (arabic_to_roman (num-5)))
-                                      else if (num >= 1)
-                                        then ("I" ++ (arabic_to_roman (num-1)))
-                                        else (error "Roman Numerals must be positive numbers greater than zero")
-                                        else (error "Roman Numerals must be positive numbers greater than zeroII")
+                          then ("M" ++ (calcRoman (num-1000)))
+                          else if (num >= 900)
+                            then ("CM" ++ (calcRoman (num-900)))
+                            else if (num >= 500)
+                              then ("D" ++ (calcRoman (num-500)))
+                              else if (num >= 400)
+                                then ("CD" ++ (calcRoman (num-400)))
+                                else if (num >= 100)
+                                  then ("C" ++ (calcRoman (num-100)))
+                                  else if (num >= 90)
+                                    then ("XC" ++ (calcRoman (num-90)))
+                                    else if (num >= 50)
+                                      then ("L" ++ (calcRoman (num-50)))
+                                      else if (num >= 40)
+                                        then ("XL" ++ (calcRoman (num-40)))
+                                        else if (num >= 10)
+                                          then ("X" ++ (calcRoman (num-10)))
+                                          else if (num >= 9)
+                                            then ("IX" ++ (calcRoman (num-9)))
+                                            else if (num >= 5)
+                                              then ("V" ++ (calcRoman (num-5)))
+                                              else if (num >= 4)
+                                                then ("IV" ++ (calcRoman (num-4)))
+                                                else if (num >= 1)
+                                                  then ("I" ++ (calcRoman (num-1)))
+                                                  else (error "Roman Numerals must be positive numbers greater than zero")
+                                                  else (error "Roman Numerals must be positive numbers greater than zero")
 
 ----------
 -- Testing
@@ -90,7 +107,7 @@ main = do
   print $ "arabic_to_roman 1000 - Expected: M, Actual: " ++ show (arabic_to_roman 1000)
 
   print $ "arabic_to_roman 2 - Expected: II, Actual: " ++ show (arabic_to_roman 2)
-  print $ "arabic_to_roman 4 - Expected: IV, Actual: " ++ show (arabic_to_roman 4)
+  print $ "arabic_to_roman 9 - Expected: IX, Actual: " ++ show (arabic_to_roman 944)
 
 
 
