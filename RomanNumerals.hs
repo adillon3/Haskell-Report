@@ -2,12 +2,13 @@ import Data.List
 import System.IO
 
 ----------------------
---ADD_ROMAN_NUMERALS--
+--ROMAN_NUMERALS_CALCULATOR--
 ----------------------
-
 add_roman_numerals :: String -> String -> String
 add_roman_numerals num1 num2 = arabic_to_roman (roman_to_arabic(num1) + roman_to_arabic(num2))
 
+subtract_roman_numerals :: String -> String -> String
+subtract_roman_numerals num1 num2 =  arabic_to_roman(roman_to_arabic(num1) - roman_to_arabic(num2))
 
 -------------------
 --ROMAN_TO_ARRAIC--
@@ -85,8 +86,8 @@ calcRoman num = if (num > 0)
 main = do
 
   print $ "** TESTING ADD_ROMAN_NUMERALS **"
-  print $ "IV + I " ++ show (add_roman_numerals "IV" "I")
-  print $ "X + X " ++ show (add_roman_numerals "X" "X")
+  print $ "IV - I = " ++ show (subtract_roman_numerals "IV" "I")
+  print $ "X + X = " ++ show (add_roman_numerals "X" "X")
 
 
   return ()
