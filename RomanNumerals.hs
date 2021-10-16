@@ -1,5 +1,6 @@
 import Data.List
 import System.IO
+import Data.Char
 
 ----------------------
 --ROMAN_NUMERALS_CALCULATOR--
@@ -14,7 +15,7 @@ subtractRomanNumerals num1 num2 =  arabicToRoman(romanToArabic(num1) - romanToAr
 --ROMAN TO ARRAIC--
 -------------------
 romanToArabic :: String -> Integer
-romanToArabic x = convertIntegers(getCharacters x)
+romanToArabic romanInput = convertIntegers(getCharacters romanInput)
 
 convertIntegers :: [Integer] -> Integer
 convertIntegers [] = 0
@@ -29,7 +30,7 @@ convertIntegers (x:xs) = do
 
 getCharacters :: String -> [Integer]
 getCharacters [] = []
-getCharacters (x:xs) = (getValueOfCharacter x) : getCharacters xs
+getCharacters (x:xs) = (getValueOfCharacter (toUpper x)) : getCharacters xs
 
 getValueOfCharacter :: Char -> Integer
 getValueOfCharacter 'I' = 1
@@ -39,6 +40,7 @@ getValueOfCharacter 'L' = 50
 getValueOfCharacter 'C' = 100
 getValueOfCharacter 'D' = 500
 getValueOfCharacter 'M' = 1000
+getValueOfCharacter x = error "Invalid character: Roman Numerals can only use I, V, L, X, C, D, & M"
 
 --------------------
 --ARRABIC TO ROMAN--
@@ -87,7 +89,7 @@ main = do
 
   print $ "** TESTING addRomanNumerals **"
   print $ "IV - I = " ++ show (subtractRomanNumerals "IV" "I")
-  print $ "X + X = " ++ show (addRomanNumerals "X" "X")
+  print $ "X + X = " ++ show (addRomanNumerals "X" "x")
 
 
   return ()
