@@ -4,17 +4,17 @@ import System.IO
 ----------------------
 --ROMAN_NUMERALS_CALCULATOR--
 ----------------------
-add_roman_numerals :: String -> String -> String
-add_roman_numerals num1 num2 = arabic_to_roman (roman_to_arabic(num1) + roman_to_arabic(num2))
+addRomanNumerals :: String -> String -> String
+addRomanNumerals num1 num2 = arabicToRoman (romanToArabic(num1) + romanToArabic(num2))
 
-subtract_roman_numerals :: String -> String -> String
-subtract_roman_numerals num1 num2 =  arabic_to_roman(roman_to_arabic(num1) - roman_to_arabic(num2))
+subtractRomanNumerals :: String -> String -> String
+subtractRomanNumerals num1 num2 =  arabicToRoman(romanToArabic(num1) - romanToArabic(num2))
 
 -------------------
---ROMAN_TO_ARRAIC--
+--ROMAN TO ARRAIC--
 -------------------
-roman_to_arabic :: String -> Integer
-roman_to_arabic x = convertIntegers(getCharacters x)
+romanToArabic :: String -> Integer
+romanToArabic x = convertIntegers(getCharacters x)
 
 convertIntegers :: [Integer] -> Integer
 convertIntegers [] = 0
@@ -41,12 +41,12 @@ getValueOfCharacter 'D' = 500
 getValueOfCharacter 'M' = 1000
 
 --------------------
---ARRABIC_TO_ROMAN--
+--ARRABIC TO ROMAN--
 --------------------
 
-arabic_to_roman :: Integer -> String
-arabic_to_roman 0 = error "Roman Numerals must be positive numbers greater than zero"
-arabic_to_roman num = calcRoman(num)
+arabicToRoman :: Integer -> String
+arabicToRoman 0 = error "Roman Numerals must be positive numbers greater than zero"
+arabicToRoman num = calcRoman(num)
 
 calcRoman :: Integer -> String
 calcRoman 0 = []
@@ -85,9 +85,9 @@ calcRoman num = if (num > 0)
 ----------
 main = do
 
-  print $ "** TESTING ADD_ROMAN_NUMERALS **"
-  print $ "IV - I = " ++ show (subtract_roman_numerals "IV" "I")
-  print $ "X + X = " ++ show (add_roman_numerals "X" "X")
+  print $ "** TESTING addRomanNumerals **"
+  print $ "IV - I = " ++ show (subtractRomanNumerals "IV" "I")
+  print $ "X + X = " ++ show (addRomanNumerals "X" "X")
 
 
   return ()
