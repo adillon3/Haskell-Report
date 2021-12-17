@@ -2,9 +2,9 @@ import Data.List
 import System.IO
 import Data.Char
 
-----------------------
+-----------------------------
 --ROMAN_NUMERALS_CALCULATOR--
-----------------------
+-----------------------------
 addRomanNumerals :: String -> String -> String
 addRomanNumerals num1 num2 = arabicToRoman (romanToArabic(num1) + romanToArabic(num2))
 
@@ -12,7 +12,7 @@ subtractRomanNumerals :: String -> String -> String
 subtractRomanNumerals num1 num2 =  arabicToRoman(romanToArabic(num1) - romanToArabic(num2))
 
 -------------------
---ROMAN TO ARRAIC--
+--ROMAN TO ARABIC--
 -------------------
 romanToArabic :: String -> Integer
 romanToArabic romanInput = convertIntegers(getCharacters romanInput)
